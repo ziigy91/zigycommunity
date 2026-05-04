@@ -156,7 +156,7 @@
         .hero {
             margin-top: 80px; padding: 6rem 5%;
             background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-            text-align: center; position: relative; overflow: hidden; min-height: 600px;
+            text-align: center; position: relative; overflow: hidden; min-height: 500px;
         }
 
         .thrill-bg {
@@ -241,17 +241,6 @@
         }
         .btn-secondary:hover { background: var(--primary); transform: translateY(-3px); }
 
-        /* Countdown Banner */
-        .countdown-banner {
-            background: linear-gradient(135deg, rgba(145,70,255,0.15), rgba(0,245,147,0.1));
-            border: 1px solid var(--accent); border-radius: 12px; padding: 1rem; margin: 1.5rem auto;
-            max-width: 500px; text-align: center;
-        }
-        .countdown { display: flex; justify-content: center; gap: 0.8rem; margin-top: 0.5rem; }
-        .time-box { background: var(--card); padding: 0.5rem 1rem; border-radius: 8px; min-width: 60px; }
-        .time-box span { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
-        .time-box small { display: block; font-size: 0.7rem; color: var(--text-muted); }
-
         /* Section Styles */
         .section { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
         .section-title {
@@ -303,13 +292,6 @@
             align-items: center; gap: 0.8rem; transition: transform 0.3s, box-shadow 0.3s; position: relative; z-index: 1;
         }
         .btn-white:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); }
-
-        .discord-live-status {
-            display: flex; align-items: center; justify-content: center; gap: 0.6rem;
-            margin: 1.5rem 0; font-size: 0.95rem; position: relative; z-index: 1;
-        }
-        .status-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
-        .status-note { color: rgba(255,255,255,0.8); font-size: 0.85rem; }
 
         /* TikTok Giveaways Section */
         .tiktok-section {
@@ -412,18 +394,6 @@
         }
         .tribute-link:hover { color: var(--primary); border-bottom-style: solid; text-shadow: 0 0 15px rgba(0, 245, 147, 0.4); }
 
-        /* Notify Banner */
-        .notify-banner {
-            position: fixed; bottom: 20px; right: 20px; background: var(--card);
-            border: 1px solid var(--primary); border-radius: 12px; padding: 1rem 1.5rem;
-            display: flex; align-items: center; gap: 1rem; max-width: 320px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3); z-index: 999; animation: slideUp 0.4s ease;
-        }
-        @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .notify-banner i { font-size: 1.8rem; color: var(--accent); }
-        .notify-banner p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
-        .notify-banner button { padding: 0.5rem 1rem; font-size: 0.9rem; }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hamburger { display: flex; }
@@ -447,7 +417,6 @@
             .discord-stats { gap: 2rem; }
             .cta-buttons { flex-direction: column; align-items: center; }
             .btn-primary, .btn-secondary, .tiktok-btn, .thrill-btn { width: 100%; max-width: 300px; justify-content: center; }
-            .notify-banner { bottom: 10px; right: 10px; left: 10px; max-width: none; flex-wrap: wrap; text-align: center; justify-content: center; }
             .faq-question { font-size: 1rem; padding: 1rem; }
             .winners-table { min-width: 500px; }
             .winners-table th, .winners-table td { padding: 0.8rem 0.5rem; font-size: 0.9rem; }
@@ -515,15 +484,6 @@
                     <i class="fas fa-ticket-alt"></i> 552DB546-1766523881
                 </div>
                 <p class="promo-note">⏳ Valid only within 24 hours of registration</p>
-            </div>
-
-            <div class="countdown-banner">
-                <p>⏰ Next giveaway ends in:</p>
-                <div class="countdown" id="countdown">
-                    <span class="time-box"><span id="hours">23</span><small>h</small></span>
-                    <span class="time-box"><span id="minutes">59</span><small>m</small></span>
-                    <span class="time-box"><span id="seconds">59</span><small>s</small></span>
-                </div>
             </div>
 
             <div class="cta-buttons">
@@ -609,14 +569,7 @@
         
         <div class="discord-stats">
             <div class="stat"><span class="stat-number">1-2</span><span class="stat-label">Events Weekly</span></div>
-            <div class="stat"><span class="stat-number" id="discordOnline">●●●</span><span class="stat-label">Online Now</span></div>
             <div class="stat"><span class="stat-number">🎁</span><span class="stat-label">Regular Giveaways</span></div>
-        </div>
-
-        <div class="discord-live-status">
-            <div class="status-dot"></div>
-            <span id="onlineCount">Loading...</span>
-            <span class="status-note">in #general chat</span>
         </div>
 
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
@@ -688,13 +641,6 @@
         <div class="age-restriction"><i class="fas fa-exclamation-triangle"></i> 18+ Only | Gamble Responsibly</div>
     </footer>
 
-    <!-- Notify Banner -->
-    <div class="notify-banner" id="notifyBanner">
-        <i class="fas fa-bell"></i>
-        <div><strong>Never miss a bonus!</strong><p>Get instant alerts for giveaways & exclusive codes</p></div>
-        <button class="btn-secondary" onclick="requestNotify()">Enable</button>
-    </div>
-
     <script>
         // ========== PRELOADER ==========
         window.addEventListener('load', () => {
@@ -761,36 +707,6 @@
             });
         }
 
-        // Countdown
-        function startCountdown() {
-            const target = new Date(); target.setHours(target.getHours() + 24);
-            setInterval(() => {
-                const now = new Date(); const diff = target - now;
-                document.getElementById('hours').textContent = Math.floor(diff / 3600000).toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = Math.floor((diff % 3600000) / 60000).toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = Math.floor((diff % 60000) / 1000).toString().padStart(2, '0');
-            }, 1000);
-        }
-        document.addEventListener('DOMContentLoaded', startCountdown);
-
-        // Discord Members (simulated)
-        function updateDiscordDisplay(onlineCount) {
-            document.getElementById('discordOnline').textContent = onlineCount;
-            document.getElementById('onlineCount').textContent = `● ${onlineCount} online now`;
-            document.getElementById('discordOnline').style.color = onlineCount > 100 ? 'var(--accent)' : '#fbbf24';
-        }
-        function simulateDiscordMembers() {
-            const base = 180;
-            const fluctuation = Math.floor(Math.random() * 60) - 30;
-            const online = Math.max(50, base + fluctuation);
-            updateDiscordDisplay(online);
-            setInterval(() => {
-                const newOnline = Math.max(50, online + Math.floor(Math.random() * 20) - 10);
-                updateDiscordDisplay(newOnline);
-            }, 45000);
-        }
-        document.addEventListener('DOMContentLoaded', simulateDiscordMembers);
-
         // ========== FAQ ACCORDION ==========
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
@@ -800,29 +716,6 @@
                 if (!isActive) item.classList.add('active');
             });
         });
-
-        // Notifications
-        function requestNotify() {
-            if ('Notification' in window) {
-                Notification.requestPermission().then(p => {
-                    if (p === 'granted') {
-                        new Notification('🎁 ZiGy Community', { body: 'Notifications enabled! You\'ll get alerts for bonuses & giveaways.', icon: 'https://via.placeholder.com/64/9146ff/ffffff?text=Z' });
-                        document.getElementById('notifyBanner').style.display = 'none';
-                    } else alert('Join Discord for updates!');
-                });
-            } else alert('Browser doesn\'t support notifications.');
-        }
-
-        // ========== MANUAL WINNER ROW TEMPLATE (copy-paste this to add rows) ==========
-        /*
-        <tr>
-            <td>1</td>
-            <td class="prize-amount">$0.00</td>
-            <td>YYYY-MM-DD</td>
-            <td>Game/Event Name</td>
-            <td>Discord/TikTok</td>
-        </tr>
-        */
     </script>
 </body>
 </html>
