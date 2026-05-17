@@ -201,10 +201,11 @@
         .tips-list li i { color: var(--accent); font-size: 0.8rem; }
 
         .winners-table-container { overflow-x: auto; border-radius: 12px; border: 1px solid rgba(145, 70, 255, 0.2); }
-        .winners-table { width: 100%; border-collapse: collapse; min-width: 600px; background: var(--card); }
+        .winners-table { width: 100%; border-collapse: collapse; min-width: 700px; background: var(--card); }
         .winners-table th { padding: 1rem; text-align: left; color: var(--text-muted); font-weight: 600; background: rgba(145, 70, 255, 0.1); border-bottom: 2px solid rgba(145, 70, 255, 0.3); }
         .winners-table td { padding: 1rem; color: var(--text); border-bottom: 1px solid rgba(145, 70, 255, 0.1); }
         .winners-table .prize-amount { color: var(--accent); font-weight: 700; font-size: 1.1rem; }
+        .winners-table .username-cell { font-weight: 600; color: var(--primary); font-family: 'Courier New', monospace; }
 
         /* Features */
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
@@ -264,7 +265,7 @@
             .cta-buttons { flex-direction: column; align-items: center; }
             .btn-primary, .btn-secondary, .thrill-btn, .tiktok-btn, .instagram-btn { width: 100%; max-width: 300px; justify-content: center; }
             .faq-question { font-size: 1rem; padding: 1rem; }
-            .winners-table { min-width: 500px; } .winners-table th, .winners-table td { padding: 0.8rem 0.5rem; font-size: 0.9rem; }
+            .winners-table { min-width: 600px; } .winners-table th, .winners-table td { padding: 0.8rem 0.5rem; font-size: 0.85rem; }
             #cookie-banner { flex-direction: column; text-align: center; gap: 0.8rem; }
             #backToTop { bottom: 15px; right: 15px; width: 42px; height: 42px; }
         }
@@ -399,7 +400,8 @@
             <table class="winners-table" id="winnersTable">
                 <thead>
                     <tr>
-                        <th style="width: 50px;">#</th>
+                        <th style="width: 40px;">#</th>
+                        <th>Username</th>
                         <th>Prize</th>
                         <th>Date</th>
                         <th>Game/Event</th>
@@ -407,15 +409,24 @@
                     </tr>
                 </thead>
                 <tbody id="winnersBody">
-                    <!-- Add winner rows manually here. Example:
+                    <!-- ✅ UBAČENI PODACI ZA IGRAČE S USERNAME STUPCEM -->
                     <tr>
                         <td>1</td>
-                        <td class="prize-amount">$1,250.00</td>
-                        <td>2026-04-20</td>
-                        <td>Blackjack Tournament</td>
-                        <td>Discord</td>
+                        <td class="username-cell">hajnic1012</td>
+                        <td class="prize-amount">$10.00</td>
+                        <td>16.5.26</td>
+                        <td>registration bonus</td>
+                        <td>tip</td>
                     </tr>
-                    -->
+                    <tr>
+                        <td>2</td>
+                        <td class="username-cell">lukaric95</td>
+                        <td class="prize-amount">$10.00</td>
+                        <td>18.5.26</td>
+                        <td>registration bonus</td>
+                        <td>tip</td>
+                    </tr>
+                    <!-- ✅ KRAJ UBAČENIH PODATAKA -->
                 </tbody>
             </table>
         </div>
